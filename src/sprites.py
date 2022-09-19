@@ -7,24 +7,24 @@ import pygame
 from window import HEIGHT, WIDTH, WIN
 
 
-def path(*p) -> str:
-    return os.path.join(f"{__file__}/../", *p)
+def path(name) -> str:
+    return os.path.join(f"assets", name)
 
 
 _boat_size = int(WIDTH // 5), int(WIDTH // 10)
 
-BACKGROUND = pygame.image.load(path("../assets/waves.svg"))
+BACKGROUND = pygame.image.load(path("waves.svg"))
 BACKGROUND = pygame.transform.scale(BACKGROUND, (WIDTH, HEIGHT))
 
-BOAT_1 = pygame.image.load(path("../assets/boat-1.svg"))
-BOAT_2 = pygame.image.load(path("../assets/boat-2.svg"))
+BOAT_1 = pygame.image.load(path("boat-1.svg"))
+BOAT_2 = pygame.image.load(path("boat-2.svg"))
 BOAT_1 = pygame.transform.scale(BOAT_1, _boat_size)
 BOAT_2 = pygame.transform.scale(BOAT_2, _boat_size)
 
-TORPEDO = pygame.image.load(path("../assets/torpedo.svg"))
+TORPEDO = pygame.image.load(path("torpedo.svg"))
 TORPEDO = pygame.transform.scale(TORPEDO, (int(_boat_size[0] // 2), int(_boat_size[1] // 2 * (TORPEDO.get_width() / TORPEDO.get_height()))))
 
-MINE = pygame.image.load(path("../assets/mine.svg"))
+MINE = pygame.image.load(path("mine.svg"))
 MINE = pygame.transform.scale(MINE, (_boat_size[0] * 0.75, _boat_size[0] * 0.75))
 
 
